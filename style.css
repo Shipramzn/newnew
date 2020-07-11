@@ -157,3 +157,8 @@
     background-color: #cc7400;
 } 
 
+#wrapper{
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+}
