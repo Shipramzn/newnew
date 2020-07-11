@@ -3,6 +3,8 @@ const ctx= canvas.getContext("2d");
 const Height= canvas.height;
 const Width= canvas.width;
 var img = document.getElementById("image");
+var img2 = document.getElementById("image2");
+
 var output;
 var gap= 3;
 var cnt;
@@ -14,8 +16,8 @@ var er=11;
 tileW= 27;
 tileH=27;
 
-tileRow= 25;
-tileColumn= 60;
+tileRow= 28;
+tileColumn= 67;
 
 boundX=0;
 boundY=0;
@@ -47,7 +49,7 @@ function rect(x,y,w,h,state,c,r){
     //     ctx.fillStyle='#00FF00';        
     // }
     else if (state==='f'){
-        ctx.fillStyle= '#FF0000';
+        ctx.drawImage(img2,x,y,tileW,tileH);              
     }
     else if (state==='e'){
         ctx.fillStyle= '#000000';
@@ -56,7 +58,7 @@ function rect(x,y,w,h,state,c,r){
         ctx.fillStyle= '#6C6C6C';
     }
     else if(state==="x"){
-        ctx.fillStyle="#0CFE5B";
+        ctx.fillStyle="#059A16";
     }
     else
     {
@@ -65,7 +67,7 @@ function rect(x,y,w,h,state,c,r){
     }
 
     ctx.beginPath();
-    if (state != 's'){
+    if (state != 's' && state != 'f'){
         ctx.rect(x,y,w,h);
     }
     // ctx.rect(x,y,w,h);
@@ -97,26 +99,36 @@ function myMove(e){
     for (c=0; c < tileColumn; c++){
         for (r=0; r < tileRow; r++){
             if (c*(tileW+gap)<x && x < c*(tileW+gap)+tileW && r*(tileH+gap)<y && y < r*(tileH+gap)+tileH){
-                if ((tiles[c][r].state==='e'|| tiles[c][r].state==='v') && (c!=boundX || r!=boundY) && cnt==='1'){
-                    tiles[c][r].state='w';
-                    boundX=c;
-                    boundY=r;
+                if (tiles[c][r].state === 'e' && (c != boundX || r != boundY) && cnt === 2) {
+                    tiles[c][r].state = 's';
+                    tiles[boundX][boundY].state = 'e';
+                    boundX = c;
+                    boundY = r;
+                    sc=c;
+                    sr=r;
                 }
-                else if (tiles[c][r].state==='w' && (c!=boundX || r!=boundY)&& cnt==='1'){
-                    tiles[c][r].state='e';
-                    boundX=c;
-                    boundY=r;
+                else if (tiles[c][r].state === 'e' && (c != boundX || r != boundY) && cnt === 4) {
+                    tiles[c][r].state = 'f';
+                    tiles[boundX][boundY].state = 'e';
+                    boundX = c;
+                    boundY = r;
+                    ec=c;
+                    er=r;
                 }
-                else if (tiles[c][r].state==='e' && (c!=boundX || r!=boundY) && cnt=== '2'){
-                    tiles[c][r].state='s';
-                    tiles[boundX][boundY].state='e';
-                    boundX=c;
-                    boundY=r;                    
+                else if ((tiles[c][r].state === 'e' || tiles[c][r].state === 'v') && (c != boundX || r != boundY) && cnt === '1') {
+                    tiles[c][r].state = 'w';
+                    boundX = c;
+                    boundY = r;
                 }
-                else if((c!=boundX || r!=boundY) && cnt=== '3' && tiles[c][r].state==='w'){
-                    tiles[c][r].state='e';
-                    boundX=c;
-                    boundY=r;
+                else if (tiles[c][r].state === 'w' && (c != boundX || r != boundY) && cnt === '1') {
+                    tiles[c][r].state = 'e';
+                    boundX = c;
+                    boundY = r;
+                }
+                else if ((c != boundX || r != boundY) && cnt === '3' && tiles[c][r].state === 'w') {
+                    tiles[c][r].state = 'e';
+                    boundX = c;
+                    boundY = r;
                 }
             }
         }
@@ -147,16 +159,21 @@ function myDown(e){
                     boundY=r;
                 }
                 else if (tiles[c][r].state==='s'){
-                    // tiles[c][r].state='ms';
                     boundX=c;
                     boundY=r;
                     cnt=2;
                     sc=c;
                     sr=r;
                 }
+                else if (tiles[c][r].state==='f'){
+                    boundX=c;
+                    boundY=r;
+                    cnt=4;
+                    ec=c;
+                    er=r;
+                }
                 else{
                     tiles[c][r].state='w';
-                    // cnt='3';
                     boundX=c;
                     boundY=r;
                 }
