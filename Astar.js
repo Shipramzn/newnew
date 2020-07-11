@@ -1,28 +1,3 @@
-
-
- console.log(tiles)
- 
-
-/*
-function removeFromArray(arr,elt){
-    for(var i=arr.length-1;i>=0;i--){
-        if(arr[i] == elt){
-            arr.splice(i,1)
-        }
-    }
-}*/
-/*
-function heuristic(a,b){
-    var dx = Math.abs(a.i - b.i)
-    var dy = Math.abs(a.j - b.j)
-    return (dx+dy)
-
-}
-*/
-
-//start = tiles[0][0]
-//end = tiles[tileColumn-1][tileRow-1]
-
 function solveMaze(){
     var openSet=[]
    var closedSet=[]
@@ -30,6 +5,8 @@ function solveMaze(){
    var end
    var flag=0
    var path=[]
+   var winner
+   var current
     start = tiles[0][0]
     end = tiles[tileColumn-1][tileRow-1]
     
@@ -37,14 +14,14 @@ function solveMaze(){
     
     while(openSet.length >0){
        
-            var winner =0    
+            winner =0    
             for(var i=0;i<openSet.length;i++){
                if(openSet[i].f < openSet[winner].f){
                    winner =i
                }
             }
 
-            var current = openSet[winner]
+            current = openSet[winner]
             if(current === end){
                 
                 path =[]
@@ -96,17 +73,13 @@ function solveMaze(){
                 }
                    
             }
-            /*
+            
             for(var i=0;i<closedSet.length;i++){
                 // console.log(closedSet[i])
                  closedSet[i].state='b'
              }
-             for(var i=0;i<openSet.length;i++){
-                 openSet[i].state='g'
-             }
-         for(var i=0;i<path.length;i++){
-             path[i].state='x'
-         }*/
+             
+         
             
 
             }
@@ -125,6 +98,7 @@ function solveMaze(){
         }
     
         
+
 
 
 
