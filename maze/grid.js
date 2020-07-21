@@ -29,12 +29,12 @@ var start
 var end
 var X
 var Y
-tileW= 25;          // width of each tile
-tileH= 25;  
+tileW= 30;          // width of each tile
+tileH= 30;  
 console.log(Height)
 console.log(Width)         // height of each tile
-tileRow= Height/28;        // number of rows in grid
-tileColumn= Width/28; 
+tileRow=(Height/33);        // number of rows in grid
+tileColumn= (Width/33); 
 console.log(tileColumn)
 console.log(tileRow)                       // number of columns in grid
 boundX=0;
