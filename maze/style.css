@@ -1,0 +1,196 @@
+.p-box{
+	background-image:url('./images/space5.jpg');
+}
+
+.title {
+    color: darkslategray;
+    font-size: 40px;
+    font-weight: 700; 
+    text-align: center;
+    padding: 3px 5px;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    width: 50%;
+}
+
+.title-container {
+    background-color: violet;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  /*  height:75px;
+    width:1500px;*/
+    width: 100%;
+    height: 75px;
+}
+
+.key {
+    margin-right: 2%;
+    align-self: center;
+    flex-direction: row;
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.key p {
+    color :white;
+    margin: 2%;
+}
+
+.kstart {
+    width: 25px;
+}
+
+.kgoal {
+    width: 25px;
+}
+
+.kstart {
+    background: white;
+    width: 25px;
+    height: 25px;
+    background-image: url("./images/mars_rover3.png");
+    background-color: green;
+    border: 1px solid white;
+}
+
+.kgoal {
+    background: green;
+    width: 25px;
+    height: 25px;
+    background-image: url("./images/stop.png");
+    background-color: red;
+    border: 1px solid white;
+}
+
+.kblock {
+    background: white;
+    width: 25px;
+    height: 25px;
+    background-color: #6C6C6C;
+    border: 1px solid white;
+}
+
+.kpath {
+    background: white;
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    border: 1px solid white;
+}
+
+#outcome{
+    position: absolute;
+    left: 20px;
+    top: 650px;
+    color:rgb(162, 238, 40);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    /* font-weight: bolder; */
+    font-display: center;     
+}
+
+.help {
+    width: 20%;
+}
+
+
+.helpbtn {
+    color: #ffffff;
+    background-color: #FF9000;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+.start-btn:hover , .gen:hover , .reset-btn:hover{
+    background-color: #369682;
+    cursor: pointer;
+}
+
+.start-btn, .gen , .reset-btn {
+    color: #ffffff;
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 5%;
+    font-size: 25px;
+    font-weight: normal;
+    border-radius: 4px;
+    padding: 10px 20px;
+    height: 60px;
+   
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    white-space: nowrap;
+}
+
+
+.buttons {
+    background-color: #369682;
+    cursor: pointer;
+    align-content: center;
+    width: 100%;
+
+}
+
+.helpbtn:hover {
+    background-color: #cc7400;
+} 
+
+.check{
+    color: #ffffff;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+}
+
+.option{
+font-size: 20px;
+}
+
+.sel{
+    font-size: 25px;
+    border: none;
+    border-radius: 5%;
+    background-color: #1abc9c;
+    height: 60px;
+    width: 10em;
+    color: #ffffff;
+}
+
+.sel:hover{
+    background-color: #369682;
+}
+
+.weight{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    padding-left: 20px;
+}
+#wgt{
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: normal;
+    font-size: 18px;
+}
+.time{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+#tm{
+    width: 1.5em;
+    height: 1.5em;
+}
+body {
+    overflow: hidden; /* Hide scrollbars */
+  }
