@@ -112,7 +112,7 @@
     margin-left: 25px;
 }
 
-.start-btn:hover , .gen:hover , .reset-btn:hover, .sel:hover{
+.start-btn:hover , .gen:hover , .reset-btn:hover{
     background-color: #369682;
     cursor: pointer;
 }
@@ -122,7 +122,7 @@
     background-color: #1abc9c;
     border: none;
     border-radius: 5%;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: normal;
     border-radius: 4px;
     padding: 10px 20px;
@@ -147,7 +147,7 @@
 
 .check{
     color: #ffffff;
-    font-size: 20px;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px 20px;
 }
@@ -157,7 +157,7 @@ font-size: 20px;
 }
 
 .sel{
-    font-size: 20px;
+    font-size: 25px;
     border: none;
     border-radius: 5%;
     background-color: #1abc9c;
@@ -172,7 +172,7 @@ font-size: 20px;
 
 .weight{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: #ffffff;
     padding-left: 20px;
 }
@@ -182,7 +182,15 @@ font-size: 20px;
     font-weight: normal;
     font-size: 18px;
 }
-
+.time{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+#tm{
+    width: 1.5em;
+    height: 1.5em;
+}
 body {
     overflow: hidden; /* Hide scrollbars */
   }
