@@ -112,7 +112,7 @@
     margin-left: 25px;
 }
 
-.start-btn:hover , .gen:hover , .reset-btn:hover{
+.start-btn:hover , .gen:hover , .reset-btn:hover, .sel:hover{
     background-color: #369682;
     cursor: pointer;
 }
@@ -147,7 +147,7 @@
 
 .check{
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px 20px;
 }
@@ -167,12 +167,12 @@ font-size: 20px;
 }
 
 .sel:hover{
-    background-color: lightgreen;
+    background-color: #369682;
 }
 
 .weight{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
     padding-left: 20px;
 }
@@ -182,15 +182,7 @@ font-size: 20px;
     font-weight: normal;
     font-size: 18px;
 }
-.time{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #ffffff;
-}
-#tm{
-    width: 1.5em;
-    height: 1.5em;
-}
+
 body {
     overflow: hidden; /* Hide scrollbars */
   }
