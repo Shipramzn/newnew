@@ -137,6 +137,7 @@
     background-color: #369682;
     cursor: pointer;
     align-content: center;
+    padding-top: 0px;
     width: 100%;
 
 }
@@ -149,7 +150,7 @@
     color: #ffffff;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 20px;
+    padding-left: 5px;
 }
 
 .option{
@@ -162,7 +163,6 @@ font-size: 20px;
     border-radius: 5%;
     background-color: #1abc9c;
     height: 60px;
-    width: 10em;
     color: #ffffff;
 }
 
@@ -174,7 +174,7 @@ font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: #ffffff;
-    padding-left: 20px;
+    padding-left: 10px
 }
 #wgt{
     width: 1.5em;
@@ -182,15 +182,7 @@ font-size: 20px;
     font-weight: normal;
     font-size: 18px;
 }
-.time{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #ffffff;
-}
-#tm{
-    width: 1.5em;
-    height: 1.5em;
-}
+
 body {
     overflow: hidden; /* Hide scrollbars */
-  }
+}
