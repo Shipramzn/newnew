@@ -113,7 +113,7 @@
 }
 
 .start-btn:hover , .gen:hover , .reset-btn:hover{
-    background-color: lightgreen;
+    background-color: #369682;
     cursor: pointer;
 }
 
