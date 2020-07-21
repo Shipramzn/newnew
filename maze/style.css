@@ -122,11 +122,11 @@
     background-color: #1abc9c;
     border: none;
     border-radius: 5%;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: normal;
     border-radius: 4px;
     padding: 10px 20px;
-    height: 60px;
+    height: 50px;
    
     transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
     white-space: nowrap;
@@ -148,7 +148,7 @@
 
 .check{
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 5px;
 }
@@ -158,11 +158,11 @@ font-size: 20px;
 }
 
 .sel{
-    font-size: 25px;
+    font-size: 20px;
     border: none;
     border-radius: 5%;
     background-color: #1abc9c;
-    height: 60px;
+    height: 50px;
     color: #ffffff;
 }
 
@@ -172,15 +172,15 @@ font-size: 20px;
 
 .weight{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
     padding-left: 10px
 }
 #wgt{
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2em;
+    height: 1.2em;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 body {
