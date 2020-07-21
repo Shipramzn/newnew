@@ -113,7 +113,7 @@
 }
 
 .start-btn:hover , .gen:hover , .reset-btn:hover{
-    background-color: #369682;
+    background-color: lightgreen;
     cursor: pointer;
 }
 
@@ -167,7 +167,7 @@ font-size: 20px;
 }
 
 .sel:hover{
-    background-color: #369682;
+    background-color: lightgreen;
 }
 
 .weight{
