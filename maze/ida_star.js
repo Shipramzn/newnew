@@ -47,6 +47,7 @@ var flag =0
 
 
 function solve_using_idastar(heu){
+    clear_path();
     var time_s = new Date().getTime();
 
     set.push(tiles[sc][sr])
