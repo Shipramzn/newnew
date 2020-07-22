@@ -135,7 +135,7 @@ function solve_using_bestfirst(heu){
    let timerId2= window.setInterval(function(){
      if(k=== path.length){
          k=0
-         document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${time_e-time_s}ms`;
+         document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
 
      }else{
         path[k].state='x'
