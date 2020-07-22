@@ -89,12 +89,12 @@ function rect(x,y,w,h,state,c,r){     // function to draw tiles
         ctx.fillStyle= '#6C6C6C';
     }
     else if(state==="x"){            // state x corresponds to visited
-        ctx.fillStyle="indianred";
+        ctx.fillStyle="lightgreen";
     }
     else if(state === 'p'){          
-        ctx.fillStyle='palegreen'
+        ctx.fillStyle='lightcyan';
     }else if(state === 'l'){
-        ctx.fillStyle='lightseagreen'
+        ctx.fillStyle='lightyellow';
     }
     
     ctx.beginPath();
