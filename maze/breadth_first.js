@@ -51,9 +51,9 @@ function solve_using_bfs(){
 
         setTimeout(() => { clearInterval(timerId); console.log('solution exists'); }, visited_elt.length * 20);
         let timerId1= window.setInterval(function(){
-            if(j=== path.length-1){
+            if(j=== path.length){
                 j=0
-                document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s)}ms`;
+                document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
 
                 // break
 
