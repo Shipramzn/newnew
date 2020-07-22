@@ -68,6 +68,7 @@ if(flag === 0){
     let timerId= window.setInterval(function(){
         if(i === closedList.length){
             i=0
+            clearInterval(timerId)
         }else{
             if(!path.includes(closedList[i])){
                closedList[i].state='p'
@@ -79,11 +80,11 @@ if(flag === 0){
     }, 10)
     var len= length(path).toFixed(2)
 
-    setTimeout(() => {clearInterval(timerId)}, closedList.length * 100);
+    // setTimeout(() => {clearInterval(timerId)}, closedList.length * 100);
     let timerId1= window.setInterval(function(){
         if(j === openList.length){
             j=0
-            
+            clearInterval(timerId1)
 
         }else{
             if(!path.includes(openList[j])){
@@ -95,11 +96,12 @@ if(flag === 0){
         }
         j++
     }, (closedList.length*11)/(openList.length))
-    setTimeout(() => { clearInterval(timerId1)}, closedList.length * 100);
+    // setTimeout(() => { clearInterval(timerId1)}, closedList.length * 100);
     let timerId2= window.setInterval(function(){
         if(k=== path.length){
             k=0
             document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
+            clearInterval(timerId2)
         }else{
             path[k].state='x'
             tiles[sc][sr].state='s'
@@ -107,7 +109,7 @@ if(flag === 0){
         }
         k++;   
 }, (closedList.length*11)/(path.length))
-setTimeout(() => { clearInterval(timerId2) }, closedList.length * 100);
+// setTimeout(() => { clearInterval(timerId2) }, closedList.length * 100);
 }
 }
        
