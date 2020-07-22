@@ -2,31 +2,31 @@ function solve_using_astar(heu){
 clear_path();
 var flag=0
 var path=[]
-var openSet=[]      // to store elements which are still to be evaluated
-var closedSet=[]        // to store elements which are already being evaluated
+var openList=[]      // to store elements which are still to be evaluated
+var closedList=[]        // to store elements which are already being evaluated
 
 var time_s = new Date().getTime();
 
-openSet.push(tiles[sc][sr])        //adding start tile to openSet
-while(openSet.length >0){
-    var  winner =0                 
-    for(var i=0;i<openSet.length;i++){
-        if(openSet[i].f < openSet[winner].f){
-            winner =i
+openList.push(tiles[sc][sr])        //adding start tile to openSet
+while(openList.length >0){
+    var tile_with_lowest_f =0                 
+    for(var i=0;i<openList.length;i++){
+        if(openList[i].f < openList[tile_with_lowest_f].f){
+            tile_with_lowest_f =i
         }
     }
-    var current = openSet[winner]
+    var current = openList[tile_with_lowest_f]
     if(current === tiles[ec][er]){        //if destination is found
         path =path_f(current)            
         flag =1
         break;                            //then break
    }
-    removeFromArray(openSet,current)
-    closedSet.push(current)
+    remove(openList,current) 
+    closedList.push(current)
     var neighbors= addNeighbors(current,current.c,current.r)
     for(var i=0;i<neighbors.length;i++){               
         var neighbor = neighbors[i]
-        if(!closedSet.includes(neighbor) && neighbor.state != 'w'){  
+        if(!closedList.includes(neighbor) && neighbor.state != 'w'){  
            // ng = node.g + ((x - node.x === 0 || y - node.y === 0) ? 1 : SQRT2);
            var tempG    
            if(isDiagonal(current,neighbor)){
@@ -34,19 +34,19 @@ while(openSet.length >0){
            }  else{
             tempG = current.g +1    
            }                                           // this means the neighbor has not been evaluated yet                                 
-            var newPath = false
-            if(openSet.includes(neighbor)){           // if element is already present in openSet       
+            var betterPath = false
+            if(openList.includes(neighbor)){           // if element is already present in openSet       
                 if(tempG < neighbor.g){
                     neighbor.g = tempG                // then get the better g 
-                    newPath=true
+                    betterPath=true
                 }
             }else{
                 neighbor.g = tempG                   //else add element to openSet
-                openSet.push(neighbor)
-                newPath=true
+                openList.push(neighbor)
+                betterPath=true
             }
-            if(newPath){
-               console.log(weight)
+            if(betterPath){
+               //console.log(weight)
 
                 neighbor.h= weight * heuristic(neighbor,tiles[ec][er],heu)
                 neighbor.f = neighbor.g + neighbor.h      
@@ -58,19 +58,19 @@ while(openSet.length >0){
 var time_e = new Date().getTime();
 
 if(flag === 0){
-    console.log('No solution exists')
+    console.log('No Possible Path')
 }else{
-    console.log('Solution exists')
+    console.log('Path exists')
     var i=0
     var j=0
     var k=0
     path.reverse()
     let timerId= window.setInterval(function(){
-        if(i === closedSet.length){
+        if(i === closedList.length){
             i=0
         }else{
-            if(!path.includes(closedSet[i])){
-                closedSet[i].state='p'
+            if(!path.includes(closedList[i])){
+               closedList[i].state='p'
                 tiles[sc][sr].state='s'
                 tiles[ec][er].state='f'
             }
@@ -79,22 +79,23 @@ if(flag === 0){
     }, 10)
     var len= length(path).toFixed(2)
 
-    setTimeout(() => { clearInterval(timerId); console.log('solution exists'); }, closedSet.length * 100);
+    setTimeout(() => {clearInterval(timerId)}, closedList.length * 100);
     let timerId1= window.setInterval(function(){
-        if(j === openSet.length){
+        if(j === openList.length){
             j=0
             
 
         }else{
-            if(!path.includes(openSet[j])){
+            if(!path.includes(openList[j])){
+                openList[j].state ='l'
                 tiles[sc][sr].state='s'
                 tiles[ec][er].state='f'
-                openSet[j].state ='l'
+               
             }
         }
         j++
-    }, (closedSet.length*11)/(openSet.length))
-    setTimeout(() => { clearInterval(timerId1); console.log('solution exists'); }, closedSet.length * 100);
+    }, (closedList.length*11)/(openList.length))
+    setTimeout(() => { clearInterval(timerId1)}, closedList.length * 100);
     let timerId2= window.setInterval(function(){
         if(k=== path.length){
             k=0
@@ -105,8 +106,8 @@ if(flag === 0){
             tiles[ec][er].state='f'
         }
         k++;   
-}, (closedSet.length*11)/(path.length))
-setTimeout(() => { clearInterval(timerId2); console.log('solution exists'); }, closedSet.length * 100);
+}, (closedList.length*11)/(path.length))
+setTimeout(() => { clearInterval(timerId2) }, closedList.length * 100);
 }
 }
        
