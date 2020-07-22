@@ -1,5 +1,6 @@
 
 function solve_using_dijkstra(){ 
+    clear_path();
     var set=[]            // to store examined elements
     var path =[]
     var num=53*23          // grid dimensions
