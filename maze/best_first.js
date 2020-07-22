@@ -75,6 +75,7 @@ function solve_using_bestfirst(heu){
               let timerId= window.setInterval(function(){
                 if(i === closedList.length){
                     i=0
+                    clearInterval(timerId)
                 }else{
                     if(!path.includes(closedList[i])){
                         closedList[i].state='p'
@@ -88,11 +89,12 @@ function solve_using_bestfirst(heu){
              
                
          }, 10)
-         setTimeout(() => { clearInterval(timerId)}, closedList.length * 100);
+        //  setTimeout(() => { clearInterval(timerId)}, closedList.length * 100);
          let timerId1= window.setInterval(function(){
           
            if(j === openList.length){
                j=0
+               clearInterval(timerId1)
            }else{
             if(!path.includes(openList[j])){
                 openList[j].state ='l'
@@ -109,12 +111,12 @@ function solve_using_bestfirst(heu){
          
    }, (closedList.length*11)/(openList.length))
    var len= length(path).toFixed(2)
-   setTimeout(() => { clearInterval(timerId1) }, closedList.length * 100);
+//    setTimeout(() => { clearInterval(timerId1) }, closedList.length * 100);
    let timerId2= window.setInterval(function(){
      if(k=== path.length){
          k=0
          document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
-
+         clearInterval(timerId2)
      }else{
         path[k].state='x'
         tiles[sc][sr].state='s'
@@ -128,7 +130,7 @@ function solve_using_bestfirst(heu){
    
      
 }, (closedList.length*11)/(path.length))
-setTimeout(() => { clearInterval(timerId2)}, closedList.length * 100);
+// setTimeout(() => { clearInterval(timerId2)}, closedList.length * 100);
 
 
   }
