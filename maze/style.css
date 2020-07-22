@@ -1,5 +1,8 @@
-@-ms-viewport{
-  width: device-width;
+@media screen{
+    body{
+        width: device-width;
+        height: device-height;
+    }
 }
 
 .p-box{
