@@ -60,6 +60,7 @@ function cell(c,r){
     this.previous = undefined     // parent of tile
     this.visited =  false 
     this.distance = Infinity                         // visited state of each tile
+    this.prevstate= undefined
    
 }
 start = tiles[sc][sr]
@@ -130,6 +131,7 @@ function myMove(e){
                     boundY = r;
                     sc=c;
                     sr=r;
+                    
                 }
                 else if (tiles[c][r].state === 'e' && (c != boundX || r != boundY) && cnt === 4) {
                     tiles[c][r].state = 'f';
@@ -139,17 +141,23 @@ function myMove(e){
                     ec=c;
                     er=r;
                 }
-                else if ((tiles[c][r].state === 'e' || tiles[c][r].state === 'v') && (c != boundX || r != boundY) && cnt === '1') {
+                else if ((tiles[c][r].state === 'e' || tiles[c][r].state === 'p' || tiles[c][r].state === 'l'|| tiles[c][r].state=='x') && (c != boundX || r != boundY) && cnt === '1') {
+                    tiles[c][r].prevstate = tiles[c][r].state                     
                     tiles[c][r].state = 'w';
                     boundX = c;
                     boundY = r;
                 }
                 else if (tiles[c][r].state === 'w' && (c != boundX || r != boundY) && cnt === '1') {
-                    tiles[c][r].state = 'e';
+                    if (tiles[c][r].prevstate=='p'|| tiles[c][r].prevstate=='l'|| tiles[c][r].prevstate=='x'){
+                        tiles[c][r].state=tiles[c][r].prevstate
+                    }
+                    else{
+                        tiles[c][r].state = 'e';
+                    }
                     boundX = c;
-                    boundY = r;
+                    boundY = r;                 
                 }
-                else if ((c != boundX || r != boundY) && cnt === '3' && tiles[c][r].state === 'w') {
+                else if (tiles[c][r].state === 'w' && (c != boundX || r != boundY) && cnt === '3') {
                     tiles[c][r].state = 'e';
                     boundX = c;
                     boundY = r;
@@ -167,7 +175,7 @@ function myDown(e){
     x= e.pageX - canvas.offsetLeft;
     y= e.pageY - canvas.offsetTop;
     
-    for (c=0; c < tileColumn; c++){
+    for (c=0; c < tileColumn; c++){ 
         for (r=0; r < tileRow; r++){
             if (c*(tileW+gap)<x && x < c*(tileW+gap)+tileW && r*(tileH+gap)<y && y < r*(tileH+gap)+tileH){
                 if (tiles[c][r].state==='e'){
@@ -177,7 +185,12 @@ function myDown(e){
                     boundY=r;
                 }
                 else if (tiles[c][r].state==='w'){
-                    tiles[c][r].state='e';
+                    if( tiles[c][r].prevstate=='p'||tiles[c][r].prevstate=='l'|| tiles[c][r].prevstate=='x'){
+                        tiles[c][r].state=tiles[c][r].prevstate
+                    }
+                    else{
+                        tiles[c][r].state='e';
+                    }
                     cnt='1';
                     boundX=c;
                     boundY=r;
@@ -197,9 +210,11 @@ function myDown(e){
                     er=r;
                 }
                 else{
+                    tiles[c][r].prevstate= tiles[c][r].state
                     tiles[c][r].state='w';
                     boundX=c;
                     boundY=r;
+                    cnt='1';
                 }
             }
         }
