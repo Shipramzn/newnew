@@ -71,7 +71,7 @@ function solve_using_idastar(heu){
         console.log('Solution does not exists')
     }else{
         var len= length(set).toFixed(2)
-        document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s)}ms`;
+        document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
         
         /*
         var j=0
