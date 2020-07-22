@@ -1,4 +1,5 @@
 function solve_using_astar(heu){
+clear_path();
 var flag=0
 var path=[]
 var openSet=[]      // to store elements which are still to be evaluated
