@@ -192,5 +192,5 @@ body {
 }
 
 #para{
-padding-left: 725px;
+padding-left: (device-width/2);
 }
