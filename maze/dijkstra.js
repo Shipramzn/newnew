@@ -74,7 +74,7 @@ function solve_using_dijkstra(){
         let timerId1= window.setInterval(function(){
             if(j=== path.length){
                 j=0
-                document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s)}ms`;
+                document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
 
             }else{
                 path[j].state='x'
