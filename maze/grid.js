@@ -22,9 +22,9 @@ var neighbors=[]
 var gap= 3;
 var cnt;
 var sc=20;          
-var sr=11;                  
+var sr=9;                  
 var ec= 30;         
-var er=11;          
+var er=9;          
 var start
 var end
 var X
