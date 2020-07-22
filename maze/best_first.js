@@ -1,5 +1,6 @@
 
 function solve_using_bestfirst(heu){
+    clear_path();
     var openSet=[]
    var closedSet=[]
    var flag=0
