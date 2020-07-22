@@ -21,9 +21,10 @@ var rSet=[]
 var neighbors=[]
 var gap= 3;
 var cnt;
-
-tileRow=(Height/25);        // number of rows in grid
-tileColumn= (Width/25);                     // number of columns in grid
+tileW= 25;          // width of each tile
+tileH= 25;          // height of each tile
+tileRow=(Height/28);        // number of rows in grid
+tileColumn= (Width/28);                     // number of columns in grid
 var sr=Math.floor(tileRow/2); 
 var sc=(Math.floor(tileColumn/2) -5);
 var ec= (Math.floor(tileColumn/2) +5);         
@@ -32,8 +33,7 @@ var start
 var end
 var X
 var Y
-tileW= 22;          // width of each tile
-tileH= 22;          // height of each tile
+
 
 boundX=0;
 boundY=0;
