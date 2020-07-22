@@ -83,7 +83,7 @@ if(flag === 0){
     let timerId1= window.setInterval(function(){
         if(j === openSet.length){
             j=0
-            document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s)}ms`;
+            
 
         }else{
             if(!path.includes(openSet[j])){
@@ -98,6 +98,7 @@ if(flag === 0){
     let timerId2= window.setInterval(function(){
         if(k=== path.length){
             k=0
+            document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
         }else{
             path[k].state='x'
             tiles[sc][sr].state='s'
