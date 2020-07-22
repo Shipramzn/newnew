@@ -94,7 +94,7 @@ function rect(x,y,w,h,state,c,r){     // function to draw tiles
     else if(state === 'p'){          
         ctx.fillStyle='lightcyan';
     }else if(state === 'l'){
-        ctx.fillStyle='lightyellow';
+        ctx.fillStyle='lightgreen';
     }
     
     ctx.beginPath();
