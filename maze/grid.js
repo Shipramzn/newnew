@@ -89,7 +89,7 @@ function rect(x,y,w,h,state,c,r){     // function to draw tiles
         ctx.fillStyle= '#6C6C6C';
     }
     else if(state==="x"){            // state x corresponds to visited
-        ctx.fillStyle="lightgreen";
+        ctx.fillStyle="green";
     }
     else if(state === 'p'){          
         ctx.fillStyle='lightcyan';
