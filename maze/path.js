@@ -1,5 +1,5 @@
 function path_f(current){
-    path =[]
+    var path =[]
 
     var temp = current
     path.push(temp)
@@ -28,10 +28,10 @@ function length(path){
 }
 
 
-function removeFromArray(openSet,current){
-    for(var i=openSet.length-1;i>=0;i--){
-        if(openSet[i] == current){
-            openSet.splice(i,1)
+function remove(openList,current){
+    for(var i=openList.length-1;i>=0;i--){
+        if(openList[i] == current){
+            openList.splice(i,1)
         }
     }
 
