@@ -192,5 +192,5 @@ body {
     overflow: hidden; /* Hide scrollbars */
 }
 #para{
-     align-self: auto;
+     left: 700px;
 }
