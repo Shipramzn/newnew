@@ -53,38 +53,11 @@ function solve_using_dijkstra(){
     var time_e = new Date().getTime();
 
     if(flag == 1){
-        var i=0
-        var j=0
-        path.reverse()
-        let timerId= window.setInterval(function(){
-            if(i=== set.length){
-                i=0
-            }else{
-                if(!path.includes(set[i])){
-                    set[i].state='p'
-                    tiles[sc][sr].state='s'
-                    tiles[ec][er].state='f'
-                }
-            }
-            i++
-        }, 10)
-        var len= length(path).toFixed(2)
-
-        setTimeout(() => { clearInterval(timerId); console.log('solution exists'); }, set.length * 20);
-        let timerId1= window.setInterval(function(){
-            if(j=== path.length){
-                j=0
-                document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
-
-            }else{
-                path[j].state='x'
-                tiles[sc][sr].state='s'
-                tiles[ec][er].state='f'
-            }
-            j++;   
-        }, (set.length * 11)/(path.length))
-        setTimeout(() => { clearInterval(timerId1); console.log('solution exists'); }, set.length * 20);
-    }else{
+        var time= time_e-time_s
+        closed(set,path)
+        pathvisual(path, time,set)
+    }
+        else{
         console.log('solution does not exist')
     }
 }
