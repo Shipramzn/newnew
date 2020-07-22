@@ -1,4 +1,5 @@
 function solve_using_bfs(){
+    clear_path();
     var set =[]
     var visited_elt=[]                // to store visited elements
     var  flag =0
