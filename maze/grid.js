@@ -20,7 +20,7 @@ var cSet=[]
 var rSet=[]
 var neighbors=[]
 var gap= 3;
-var cnt=0;
+var cnt;
 var sc=20;          
 var sr=11;                  
 var ec= 30;         
@@ -30,13 +30,9 @@ var end
 var X
 var Y
 tileW= 25;          // width of each tile
-tileH= 25;  
-console.log(Height)
-console.log(Width)         // height of each tile
+tileH= 25;          // height of each tile
 tileRow=(Height/28);        // number of rows in grid
-tileColumn= (Width/28); 
-console.log(tileColumn)
-console.log(tileRow)                       // number of columns in grid
+tileColumn= (Width/28);                     // number of columns in grid
 boundX=0;
 boundY=0;
 
@@ -47,12 +43,12 @@ for (c=0; c < tileColumn; c++){
     for(r=0; r < tileRow; r++){
         X =c
         Y =r
-        tiles[c][r]= new spot(c,r)
+        tiles[c][r]= new cell(c,r)
     
     }
 }
 
-function spot(c,r){
+function cell(c,r){
     this.x = c*(tileW+3)     // x-coordinate of each tile
     this.y = r*(tileH+3)     // y-coordinate of each tile
     this.c=c
@@ -61,11 +57,10 @@ function spot(c,r){
     this.g=0                //cost (distance from start to current tile)
     this.f=0                //fitness number  f = g + h
     this.h=0                // heuristic value (distance from current tile to destination)
-    this.neighbors=[]       //array containing neighbors of each tile
     this.previous = undefined     // parent of tile
     this.visited =  false 
     this.distance = Infinity                         // visited state of each tile
-    this.prevstate= undefined
+   
 }
 start = tiles[sc][sr]
 end = tiles[ec][er]
@@ -92,9 +87,9 @@ function rect(x,y,w,h,state,c,r){     // function to draw tiles
         ctx.fillStyle="indianred";
     }
     else if(state === 'p'){          
-        ctx.fillStyle='palegreen';
+        ctx.fillStyle='palegreen'
     }else if(state === 'l'){
-        ctx.fillStyle='lightseagreen';
+        ctx.fillStyle='lightseagreen'
     }
     
     ctx.beginPath();
@@ -135,7 +130,6 @@ function myMove(e){
                     boundY = r;
                     sc=c;
                     sr=r;
-                    
                 }
                 else if (tiles[c][r].state === 'e' && (c != boundX || r != boundY) && cnt === 4) {
                     tiles[c][r].state = 'f';
@@ -145,23 +139,17 @@ function myMove(e){
                     ec=c;
                     er=r;
                 }
-                else if ((tiles[c][r].state === 'e' || tiles[c][r].state === 'p' || tiles[c][r].state === 'l'|| tiles[c][r].state=='x') && (c != boundX || r != boundY) && cnt === '1') {
-                    tiles[c][r].prevstate = tiles[c][r].state                     
+                else if ((tiles[c][r].state === 'e' || tiles[c][r].state === 'v') && (c != boundX || r != boundY) && cnt === '1') {
                     tiles[c][r].state = 'w';
                     boundX = c;
                     boundY = r;
                 }
                 else if (tiles[c][r].state === 'w' && (c != boundX || r != boundY) && cnt === '1') {
-                    if (tiles[c][r].prevstate=='p'|| tiles[c][r].prevstate=='l'|| tiles[c][r].prevstate=='x'){
-                        tiles[c][r].state=tiles[c][r].prevstate
-                    }
-                    else{
-                        tiles[c][r].state = 'e';
-                    }
+                    tiles[c][r].state = 'e';
                     boundX = c;
-                    boundY = r;                 
+                    boundY = r;
                 }
-                else if (tiles[c][r].state === 'w' && (c != boundX || r != boundY) && cnt === '3') {
+                else if ((c != boundX || r != boundY) && cnt === '3' && tiles[c][r].state === 'w') {
                     tiles[c][r].state = 'e';
                     boundX = c;
                     boundY = r;
@@ -179,7 +167,7 @@ function myDown(e){
     x= e.pageX - canvas.offsetLeft;
     y= e.pageY - canvas.offsetTop;
     
-    for (c=0; c < tileColumn; c++){ 
+    for (c=0; c < tileColumn; c++){
         for (r=0; r < tileRow; r++){
             if (c*(tileW+gap)<x && x < c*(tileW+gap)+tileW && r*(tileH+gap)<y && y < r*(tileH+gap)+tileH){
                 if (tiles[c][r].state==='e'){
@@ -189,12 +177,7 @@ function myDown(e){
                     boundY=r;
                 }
                 else if (tiles[c][r].state==='w'){
-                    if( tiles[c][r].prevstate=='p'||tiles[c][r].prevstate=='l'|| tiles[c][r].prevstate=='x'){
-                        tiles[c][r].state=tiles[c][r].prevstate
-                    }
-                    else{
-                        tiles[c][r].state='e';
-                    }
+                    tiles[c][r].state='e';
                     cnt='1';
                     boundX=c;
                     boundY=r;
@@ -214,11 +197,9 @@ function myDown(e){
                     er=r;
                 }
                 else{
-                    tiles[c][r].prevstate= tiles[c][r].state
                     tiles[c][r].state='w';
                     boundX=c;
                     boundY=r;
-                    cnt='1';
                 }
             }
         }
@@ -237,7 +218,7 @@ function reset()
         tiles[c]=[];
     
         for(r=0; r < tileRow; r++){
-            tiles[c][r]= new spot(c,r)
+            tiles[c][r]= new cell(c,r)
         }
     }
     
@@ -279,6 +260,7 @@ function addNeighbors(cur,c,r){
 }
 
 function clear_path(){
+    
     neighbors=[]
     for(var c=0;c<tileColumn;c++){
         for(var r=0;r<tileRow;r++){
@@ -289,11 +271,12 @@ function clear_path(){
             
         }
     }
+    
     for (c=0; c < tileColumn; c++){
         tiles[c]=[];
     
         for(r=0; r < tileRow; r++){
-            tiles[c][r]= new spot(c,r)
+            tiles[c][r]= new cell(c,r)
         }
     }
     
@@ -310,6 +293,7 @@ function clear_path(){
     start.state= 's';
     end.state= 'f';
     output.innerHTML="";   
+
     
 }
 
