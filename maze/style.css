@@ -13,7 +13,7 @@
     text-align: center;
     padding: 3px 5px;
     font-family: "Lato", Helvetica, Arial, sans-serif;
-    width: 50%;
+    width: 20%;
 }
 
 .title-container {
@@ -22,10 +22,8 @@
     align-content: center;
     justify-content: space-between;
     align-items: center;
-  /*  height:75px;
-    width:1500px;*/
     width: 100%;
-    height: 75px;
+    height: 4em;
 }
 
 .key {
@@ -91,7 +89,7 @@
     top: 580px;
     color:rgb(162, 238, 40);
     font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
+    font-size: 20px;
     /* font-weight: bolder; */
     font-display: center;     
 }
@@ -130,7 +128,7 @@
     font-weight: normal;
     border-radius: 4px;
     padding: 10px 20px;
-    height: 50px;
+    width: 10%;
    
     transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
     white-space: nowrap;
@@ -141,8 +139,8 @@
     background-color: #369682;
     cursor: pointer;
     align-content: center;
-    padding-top: 0px;
     width: 100%;
+   
 
 }
 
@@ -155,10 +153,11 @@
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 5px;
+    width: 10%;
 }
 
 .option{
-font-size: 20px;
+font-size: 16px;
 }
 
 .sel{
@@ -166,7 +165,8 @@ font-size: 20px;
     border: none;
     border-radius: 5%;
     background-color: #1abc9c;
-    height: 50px;
+    height: 45px;
+    width: 10%;
     color: #ffffff;
 }
 
@@ -179,6 +179,7 @@ font-size: 20px;
     font-size: 20px;
     color: #ffffff;
     padding-left: 10px
+
 }
 #wgt{
     width: 1.2em;
@@ -190,7 +191,6 @@ font-size: 20px;
 body {
     overflow: hidden; /* Hide scrollbars */
 }
-
 #para{
-padding-left: 710px;
+     align-self: auto;
 }
