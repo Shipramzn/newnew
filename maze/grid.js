@@ -25,8 +25,8 @@ var cnt;
 tileRow=(Height/25);        // number of rows in grid
 tileColumn= (Width/25);                     // number of columns in grid
 var sr=Math.floor(tileRow/2); 
-var sc=20;
-var ec= 30;         
+var sc=(Math.floor(tileColumn/2) -5);
+var ec= (Math.floor(tileColumn/2) +5);         
 var er=Math.floor(tileRow/2);          
 var start
 var end
