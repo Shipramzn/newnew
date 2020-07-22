@@ -1,6 +1,6 @@
 const canvas= document.getElementById("myCanvas");
 const ctx= canvas.getContext("2d");
-canvas.height = window.innerHeight-172
+canvas.height = window.innerHeight-157
 canvas.width = window.innerWidth -15
 const Height= canvas.height;
 const Width= canvas.width;
@@ -29,10 +29,10 @@ var start
 var end
 var X
 var Y
-tileW= 25;          // width of each tile
-tileH= 25;          // height of each tile
-tileRow=(Height/28);        // number of rows in grid
-tileColumn= (Width/28);                     // number of columns in grid
+tileW= 20;          // width of each tile
+tileH= 20;          // height of each tile
+tileRow=(Height/23);        // number of rows in grid
+tileColumn= (Width/23);                     // number of columns in grid
 boundX=0;
 boundY=0;
 
