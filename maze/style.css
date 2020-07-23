@@ -149,7 +149,7 @@
 }
 
 .helpbtn:hover {
-    background-color: #cc7400;
+    background-color: rgb(37, 99, 96);
 } 
 
 .check{
@@ -211,9 +211,9 @@ body {
 #para{
     color: white;
     position:absolute;
-    left: 46%;
+    left: 45%;
     background-color: rgba(0, 0, 0, 0.8);
-    top: 82%;
+    top: 87%;
 }
 
 
