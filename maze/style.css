@@ -173,10 +173,11 @@ color: white;
     border: none;
     border-radius: 5%;
     background-color: #1abc9c;
-    height: 45px;
+    //height: 45px;
     width: 10%;
     color: rgb(15, 37, 37);
     font-weight: bold;
+   //padding: 10px 20px;
 
 }
 
