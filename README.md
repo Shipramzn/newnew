@@ -1,6 +1,6 @@
 Team name: The Ismians
-Contributors:
 
+Contributors:
 1. Shipra Sharma(shipramzn7300@gmail.com)
 2. Plaksha Singh(plakshasingh4@gmail.com)
 3. Chesta Lathi (chestalathi2000@gmail.com)
@@ -8,7 +8,6 @@ Contributors:
 
 ABOUT 
 The aim of this project is to find the shortest path between two points in 2D context. The algorithms which are being implemented in this project are the following:
-
 a) A*
 b) Dijkstra
 c) Best-First Search
@@ -29,11 +28,9 @@ The project is working on all the browsers (Chrome, Microsoft edge, Mozilla Fire
 Each algorithm have its own variables with local scope. Their scope will be vanished with the termination of the algo.
 
 DOCUMENTS:
-
 We have prepared short notes on algorithms (used in the project) and heuristic functions as well. These notes are in pdf format. In addition to this, we have also prepared Software Engineering diagrams.
 
 DURATION:
-
 1. 20june - 25june :- Understanding the functioning of the algos
 2. 26june - 2july :- Learned languages (javascript, css and html)
 Note:- We have also learned nodejs , ajax, json and express(for backend) but we were facing problem in using all these together to make the project.
