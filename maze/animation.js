@@ -55,7 +55,7 @@ function pathvisual(path,time, closedList){
     let timerId2= window.setInterval(function(){
         if(k=== path.length){
             k=0
-            document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time).toFixed(3)}ms`;
+            document.getElementById("outcome").innerHTML = `Length= ${len}   Time= ${(time).toFixed(3)}ms`;
             clearInterval(timerId2)
         }else{
             path[k].state='x'

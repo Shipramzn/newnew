@@ -3,11 +3,12 @@
 }
 
 .p-box{
-	background-image:url('./images/space5.jpg');
+    background-image:url('./images/space5.jpg');
+    display:block;
 }
 
 .title {
-    color: darkslategray;
+    color: rgb(15, 37, 37);
     font-size: 40px;
     font-weight: 700; 
     text-align: center;
@@ -17,7 +18,7 @@
 }
 
 .title-container {
-    background-color: violet;
+    background-color: #369682;
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -85,13 +86,16 @@
 
 #outcome{
     position: absolute;
-    left: 20px;
-    top: 580px;
-    color:rgb(162, 238, 40);
+    left: 10%;
+    top: 3.5%;
+    color:black;
+    /* background-color: rgba(37, 67, 68, 0.8); */
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-    /* font-weight: bolder; */
+    font-weight: bolder;
     font-display: center;     
+    padding: 0;
+    margin: 0;
 }
 
 .help {
@@ -120,12 +124,12 @@
 }
 
 .start-btn, .gen , .reset-btn {
-    color: #ffffff;
+    color: rgb(15, 37, 37);
     background-color: #1abc9c;
     border: none;
     border-radius: 5%;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     border-radius: 4px;
     padding: 10px 20px;
     width: 10%;
@@ -140,7 +144,7 @@
     cursor: pointer;
     align-content: center;
     width: 100%;
-   
+    display:flex;
 
 }
 
@@ -149,15 +153,19 @@
 } 
 
 .check{
-    color: #ffffff;
+    position: relative;
+    color: rgb(15, 37, 37);
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 5px;
     width: 15%;
+    top: 7px;
+    left: 20px;
 }
 
 .option{
 font-size: 16px;
+color: white;
 }
 
 .sel{
@@ -167,7 +175,9 @@ font-size: 16px;
     background-color: #1abc9c;
     height: 45px;
     width: 10%;
-    color: #ffffff;
+    color: rgb(15, 37, 37);
+    font-weight: bold;
+
 }
 
 .sel:hover{
@@ -175,30 +185,34 @@ font-size: 16px;
 }
 
 .weight{
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: #ffffff;
-    padding-left: 10px
-
+    color: rgb(15, 37, 37);
+    padding-left: 10px;
+    top:7px;
 }
 #wgt{
+    position: relative;
     width: 1.2em;
     height: 1.2em;
     font-weight: normal;
     font-size: 15px;
+    top:13px;
+    left: 6px;
+
 }
 
 body {
     overflow: hidden; /* Hide scrollbars */
 }
+
 #para{
     color: white;
     position:absolute;
-    left: 50%;
-    background-color: rgba(49, 45, 49, 0.6);
+    left: 46%;
+    background-color: rgba(0, 0, 0, 0.8);
     top: 82%;
 }
-/* #footer{
-    backgroun
-} */
+
 
