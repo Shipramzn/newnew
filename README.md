@@ -2,8 +2,8 @@ Team name: The Ismians
 Contributors:
 
 1. Shipra Sharma(shipramzn7300@gmail.com)
-2. Plaksha Singh()
-3. Chesta lathi 
+2. Plaksha Singh(plakshasingh4@gmail.com)
+3. Chesta Lathi (chestalathi2000@gmail.com)
 
 
 ABOUT 
