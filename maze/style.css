@@ -192,5 +192,13 @@ body {
     overflow: hidden; /* Hide scrollbars */
 }
 #para{
-     left: 700px;
+    color: white;
+    position:absolute;
+    left: 50%;
+    background-color: rgba(49, 45, 49, 0.6);
+    top: 82%;
 }
+/* #footer{
+    backgroun
+} */
+

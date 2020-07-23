@@ -36,7 +36,7 @@
         <div >
             
             <canvas id='myCanvas' class='p-box' ></canvas>
-                
+            
         <div class="buttons">
         <!--    <button  class ="gen"  onclick="random_destination_points()">Generator</button>    -->       
             <button  class ="reset-btn" onclick="reset()">Reset</button>
@@ -45,13 +45,13 @@
             <button  class ="start-btn"  onclick="solve_using_dijkstra()">Dijkstra</button>
 
           <!---  <div class="id_100">-->
-                <select name="bestfirst"  class ="sel" onchange="solve_using_bestfirst(this.value)">
+            <select name="bestfirst"  class ="sel" onchange="solve_using_bestfirst(this.value)">
                 <!---  <option value="0" class = "start-btn" >Best-First</option>-->
                   <option value="none" selected disabled hidden>Best First</option>
-                  <option value="manhattan"  class="option">Manhattan</option>
-                  <option value="euclidean"  class="option">Euclidean</option>
-                  <option value="octile"  class="option">Octile</option>
-                  <option value="chebyshev"  class="option">Chebyshev</option>    
+                  <option value="manhattan"  class="option">Best First - manhattan</option>
+                  <option value="euclidean"  class="option">Best First - Euclidean</option>
+                  <option value="octile"  class="option">Best First - octile</option>
+                  <option value="chebyshev"  class="option">Best First - chebyshev</option>    
                 </select>
            <!--- </div>-->
 
@@ -60,10 +60,10 @@
                 <select name="Astar" class ="sel" onchange="solve_using_astar(this.value)">
                <!-- <option  class="start-btn">A*</option>-->
                 <option value="none" selected disabled hidden>A*</option>
-                <option value="manhattan" class="option">Manhattan</option>
-                <option value="euclidean" class="option" >Euclidean</option>
-                <option value="octile"  class="option">Octile</option>
-                <option value="chebyshev"  class="option">Chebyshev</option>    
+                <option value="manhattan" class="option">A* - manhattan</option>
+                <option value="euclidean" class="option" >A* - Euclidean</option>
+                <option value="octile"  class="option">A* - octile</option>
+                <option value="chebyshev"  class="option">A* - chebyshev</option>    
                 </select>
             <!--</div>-->
 
@@ -71,10 +71,10 @@
                 <select name="idastar" class ="sel" onchange="solve_using_idastar(this.value)">
                <!--- <option value="0" class="start-btn">IDA*</option>-->
                 <option value="none" selected disabled hidden>IDA*</option>
-                <option value="manhattan" class="option">Manhattan</option>
-                <option value="euclidean" class="option">Euclidean</option>
-                <option value="octile" class="option">Octile</option>
-                <option value="chebyshev" class="option">Chebyshev</option>    
+                <option value="manhattan" class="option">IDA* - manhattan</option>
+                <option value="euclidean" class="option">IDA* - Euclidean</option>
+                <option value="octile" class="option">IDA* - octile</option>
+                <option value="chebyshev" class="option">IDA* - chebyshev</option>    
                 </select>
            <!---- </div>-->
            <!---
@@ -90,11 +90,11 @@
             <label for="check" class = "check">
             <input type="checkbox"  id="checkdiag" checked/>Allow Diagonal</label>
         </div>
-        <p  style ="text-align: center;" id="outcome"></p>
+        <p  style ="text-align: center" id="outcome"></p>
         </div>
+        <p id ="para"> <span>Project hosted on <a href="https://github.com/Plaksha05/shortest_path.git">Github</a></span> </p>
         
-          <p id ="para">Project hosted on <a href="https://github.com/Plaksha05/shortest_path.git">Github</a></p>
-        <p id="outcome"></p>
+        <!-- <p id="outcome"></p> -->
         <script src='breadth_first.js'></script>
         <script src='Astar.js'></script>
         <script src='dijkstra.js'></script>
