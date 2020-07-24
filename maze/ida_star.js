@@ -45,10 +45,11 @@ var flag =0
 
 function solve_using_idastar(heu){
     clear_path();
-    var time_s = new Date().getTime();
+    
 
     set.push(tiles[sc][sr])
     threshold = weight * heuristic(tiles[sc][sr],tiles[ec][er],heu)
+    var time_s = new Date().getTime();
     while(1){                                                 //infinite loop
         var temp = search(set,0,threshold,heu)
         if(temp == "FOUND"){
