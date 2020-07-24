@@ -12,10 +12,7 @@ const wgt = document.getElementById('wgt')
 var weight=wgt.value
 function set_weight(value){
     weight = value
-    //return weight
-   // console.log(value)
 }
-//var output;
 var cSet=[]
 var rSet=[]
 var neighbors=[]
@@ -25,7 +22,7 @@ tileW= 25;          // width of each tile
 tileH= 25;          // height of each tile
 tileRow=(Height/28);        // number of rows in grid
 tileColumn= (Width/28);                     // number of columns in grid
-var sr=Math.floor(tileRow/2); 
+var sr=Math.floor(tileRow/2);                 
 var sc=(Math.floor(tileColumn/2) -5);
 var ec= (Math.floor(tileColumn/2) +5);         
 var er=Math.floor(tileRow/2);          
@@ -33,8 +30,6 @@ var start
 var end
 var X
 var Y
-
-
 boundX=0;
 boundY=0;
 
@@ -60,10 +55,9 @@ function cell(c,r){
     this.f=0                //fitness number  f = g + h
     this.h=0                // heuristic value (distance from current tile to destination)
     this.previous = undefined     // parent of tile
-    this.visited =  false 
-    this.distance = Infinity                         // visited state of each tile
-    this.prevstate= undefined
-   
+    this.visited =  false                // visited state of each tile
+    this.distance = Infinity 
+    this.prevstate=undefined
 }
 start = tiles[sc][sr]
 end = tiles[ec][er]
@@ -243,7 +237,7 @@ function reset()
     end = tiles[ec][er]
     start.state= 's';
     end.state= 'f';
-    output.innerHTML="";
+    
 }
 function addNeighbors(cur,c,r){
     neighbors=[]
@@ -309,7 +303,7 @@ function clear_path(){
     end = tiles[ec][er]
     start.state= 's';
     end.state= 'f';
-    output.innerHTML="";   
+      
 
     
 }
