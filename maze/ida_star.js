@@ -52,12 +52,13 @@ function solve_using_idastar(heu){
 
     set.push(tiles[sc][sr])
     threshold = weight * heuristic(tiles[sc][sr],tiles[ec][er],heu)
-    while(flag!=1){                                                 //infinite loop
+    while(1){                                                 //infinite loop
         var temp = search(set,0,threshold,heu)
         if(temp == "FOUND"){
            
             flag=1
             console.log('Solution exists')
+            break;
             
         }
         if(temp == Infinity){
