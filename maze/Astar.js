@@ -5,9 +5,10 @@ var path=[]
 var openList=[]      // to store elements which are still to be evaluated
 var closedList=[]        // to store elements which are already being evaluated
 
-var time_s = new Date().getTime();
 
-openList.push(tiles[sc][sr])        //adding start tile to openSet
+
+openList.push(tiles[sc][sr])                    //adding start tile to openSet
+var time_s = new Date().getTime();                                      
 while(openList.length >0){
     var tile_with_lowest_f =0                 
     for(var i=0;i<openList.length;i++){
