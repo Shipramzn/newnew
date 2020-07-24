@@ -1,4 +1,4 @@
-function ManhattanHeu(dx,dy){
+function ManhattanHeu(dx,dy){           //all heuristic functions
     return (dx+dy)
 }
 
@@ -15,7 +15,7 @@ function ChebyshevHeu(dx,dy){
 }
 
 
-function heuristic(curr,end,heu){
+function heuristic(curr,end,heu){           //checking which heuristic is selected
     var dx = Math.abs(curr.c - end.c)
     var dy = Math.abs(curr.r - end.r)
 
