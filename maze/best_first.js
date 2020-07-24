@@ -1,40 +1,33 @@
 
 function solve_using_bestfirst(heu){
-    clear_path();
+    clear_path();              //function present in grid.js file
     var openList=[]
-   var closedList=[]
-   var flag=0
-   var path=[]
-    //start = tiles[0][0]
-    //end = tiles[tileColumn-1][tileRow-1]
-    
+    var closedList=[]
+    var flag=0
+    var path=[]
     openList.push(tiles[sc][sr])
-
-    var time_s = new Date().getTime();
-    
+    var time_s = new Date().getTime();           //time starts
     while(openList.length >0){
        
-           var tile_with_lowest_h =0    
+           var tile_with_lowest_h =0             //index of tile having lowest heuristic value
             for(var i=0;i<openList.length;i++){
-                openList[i].h =  weight * heuristic(openList[i],tiles[ec][er],heu)
-                openList[tile_with_lowest_h].h =  weight * heuristic(openList[tile_with_lowest_h],tiles[ec][er],heu)
-               if(openList[i].h < openList[tile_with_lowest_h].h){
+                openList[i].h =  weight * heuristic(openList[i],tiles[ec][er],heu)                //function present in heuristic.js file
+                openList[tile_with_lowest_h].h =  weight * heuristic(openList[tile_with_lowest_h],tiles[ec][er],heu)      //function present in heuristic.js file
+                if(openList[i].h < openList[tile_with_lowest_h].h){
                 tile_with_lowest_h =i
                }
             }
 
-            var current = openList[tile_with_lowest_h ]
+            var current = openList[tile_with_lowest_h]
             if(current === tiles[ec][er]){
-                path =path_f(current)            
+                path =path_f(current)        //function to find path present in path.js file     
                 flag =1
                 break;  
             }
-           
-            remove(openList,current)
+            
+            remove(openList,current)           //function remove element from array present in path.js file
             closedList.push(current)
-
-           // var neighbors = current.neighbors
-           var neighbors= addNeighbors(current,current.c,current.r)
+            var neighbors= addNeighbors(current,current.c,current.r)         //function present in grid.js file
             for(var i=0;i<neighbors.length;i++){               
                 var neighbor = neighbors[i]
 
@@ -48,9 +41,8 @@ function solve_using_bestfirst(heu){
                         
                     }
                     if(betterPath){
-                        neighbor.h = weight * heuristic(neighbor,tiles[ec][er],heu)
+                        neighbor.h = weight * heuristic(neighbor,tiles[ec][er],heu)        //function present in heuristic.js file
                         neighbor.previous = current
-
 
                     }
                     
@@ -60,15 +52,15 @@ function solve_using_bestfirst(heu){
            
             
         }                    
-            var time_e = new Date().getTime();
+            var time_e = new Date().getTime();         //time ends
             if(flag === 0){
                 console.log('No path exists')
             }else{
                 
                 var time= time_e-time_s
-                closed(closedList,path)
-                open(openList,closedList,path)
-                pathvisual(path,time,closedList)
+                closed(closedList,path)               //function present in animation.js file
+                open(openList,closedList,path)         //function present in animation.js file
+                pathvisual(path,time,closedList)       //function present in animation.js file
 
   }
 }
