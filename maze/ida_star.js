@@ -2,9 +2,6 @@
 function search(set,g,threshold,heu){
     var cur = set[set.length-1]
     var f = g+ weight * heuristic(cur,tiles[ec][er],heu)
-   // cur.h =  heuristic(cur,tiles[ec][er],heu)
-    //cur.g=g
-   // cur.f = cur.g+cur.h
     if(f > threshold){
         return f
     }
