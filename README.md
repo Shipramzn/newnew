@@ -31,10 +31,10 @@ Heuristic.js contains functions for calculating heuristic distance
 animation.js file contains functions for path visualisation
 
 UI:
-On the top-left side we have Instructions button which will provide us info about how to start testing the project.
-On the top-right side we have symbols for various elements to help us understand the output.
-On the bottom side we have a bar of buttons whose info can be obtained by clicking on Instructions button.
-Immediate to instructions button length of the path and time used for algo will be displayed.
+The instructions button on the top-left is for info about how to start testing the project.
+The symbols on the top-right are the color and picture encoding.
+The bar of buttons on the bottom is for various operations listed under Instructions button.
+Immediate to instructions button the length of the path and time used for algo will be displayed.
 
 The project is working on all the browsers (Chrome, Microsoft edge, Mozilla Firefox(version 64.0 64bit), Safari(macOS Sierra)). 
 Each algorithm have its own variables with local scope. Their scope will be vanished with the termination of the algo.
@@ -48,11 +48,11 @@ DURATION:
 Note:- We have also learned nodejs , ajax, json and express(for backend) but we were facing problem in using all these together to make the project.
 3. 3july - 24july :- Project Preparation
 
-WEAKNESSES:
+LIMITATIONS:
 1. For some cases IDA* does not show any path rather the site gets hung. This may be due to the time limit exceed. The rest algos are working well
 2. If page doesn't load properly refresh it.  
-3. The project is working on 64.0 64bit version of Firefox. On other versions UI will be displayed well . Moreover , the algos will work well but you can face problem in drawing obstacles(smoothness in drawing). But other things will work well on different versions of Firefox
-4. We do not have Mac thats why we have used online safari browser (https://app.lambdatest.com/console/realtime) with  macOS Sierra(OS).   
+3. The project is working on 64.0 64bit version of Firefox. On other versions UI will be displayed well . Moreover , the algos will work well but problem can be faced in drawing obstacles(smoothness in drawing). But other things work well on different versions of Firefox
+4. Due to unavailibility of Mac, project was tested on (https://app.lambdatest.com/console/realtime) with  macOS Sierra(OS).   
 
 DEPLOYMENT:
-The project is being deployed on vercel.
+The project has been deployed on vercel.
