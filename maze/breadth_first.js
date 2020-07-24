@@ -4,9 +4,10 @@ function solve_using_bfs(){
     var visited_elt=[]                // to store visited elements
     var  flag =0
     var path=[]
-    var time_s = new Date().getTime();
+   
     set.push(tiles[sc][sr])
     tiles[sc][sr].visited = true
+    var time_s = new Date().getTime();
     while(set.length>0){  
         var cur = set[0]
         set.shift()
