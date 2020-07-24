@@ -52,14 +52,15 @@ function solve_using_idastar(heu){
 
     set.push(tiles[sc][sr])
     threshold = weight * heuristic(tiles[sc][sr],tiles[ec][er],heu)
-    while(1){                                                 //infinite loop
+    while(flag!=1){                                                 //infinite loop
         var temp = search(set,0,threshold,heu)
         if(temp == "FOUND"){
            
             flag=1
             console.log('Solution exists')
-            break
-        }if(temp == Infinity){
+            
+        }
+        if(temp == Infinity){
             return [] 
         }
         threshold = temp
@@ -71,7 +72,7 @@ function solve_using_idastar(heu){
         console.log('Solution does not exists')
     }else{
         var len= length(set).toFixed(2)
-        document.getElementById("outcome").innerHTML = `Length= ${len} <br> Time= ${(time_e-time_s).toFixed(3)}ms`;
+        document.getElementById("outcome").innerHTML = `Length= ${len}  Time= ${(time_e-time_s).toFixed(3)}ms`;
         
         /*
         var j=0
