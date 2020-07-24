@@ -4,9 +4,6 @@ var flag=0
 var path=[]
 var openList=[]      // to store elements which are still to be evaluated
 var closedList=[]        // to store elements which are already being evaluated
-
-
-
 openList.push(tiles[sc][sr])                    //adding start tile to openSet
 var time_s = new Date().getTime();                                      
 while(openList.length >0){
@@ -28,7 +25,6 @@ while(openList.length >0){
     for(var i=0;i<neighbors.length;i++){               
         var neighbor = neighbors[i]
         if(!closedList.includes(neighbor) && neighbor.state != 'w'){  
-           // ng = node.g + ((x - node.x === 0 || y - node.y === 0) ? 1 : SQRT2);
            var tempG    
            if(isDiagonal(current,neighbor)){
                tempG = current.g + Math.SQRT2
