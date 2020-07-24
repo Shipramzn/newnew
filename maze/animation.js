@@ -1,6 +1,7 @@
 function closed(closedList,path){
 
     var i=0
+    
     let timerId= window.setInterval(function(){      
         if(i === closedList.length){
             i=0
@@ -13,17 +14,14 @@ function closed(closedList,path){
             }
         }
         i++
-    }, 10)
-    
-    // setTimeout(() => {clearInterval(timerId)}, closedList.length * 100);
-    
+    },10)
+
 }
-
-
 
 function open(openList,closedList,path){
 
     var j=0
+    
     let timerId1= window.setInterval(function(){
         if(j === openList.length){
             j=0
@@ -38,13 +36,9 @@ function open(openList,closedList,path){
             }
         }
         j++
-    }, (closedList.length*11)/(openList.length))
-    // setTimeout(() => { clearInterval(timerId1)}, closedList.length * 100);
-    
+    },(closedList.length*11)/(openList.length))
+
 }
-
-
-
 
 function pathvisual(path,time, closedList){
 
@@ -63,7 +57,6 @@ function pathvisual(path,time, closedList){
             tiles[ec][er].state='f'
         }
         k++;   
-    }, (closedList.length*11)/(path.length))
-    // setTimeout(() => { clearInterval(timerId2) }, closedList.length * 100);
-}
+    },(closedList.length*11)/(path.length))
 
+}
