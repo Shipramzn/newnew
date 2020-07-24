@@ -64,6 +64,14 @@ end = tiles[ec][er]
 start.state= 's';
 end.state= 'f';
 
+function isDiagonal(a,b){                  
+    if(Math.abs(a.c-b.c) === 1 && Math.abs(a.r - b.r) === 1){
+        return true;
+    }else{
+        return false
+    }
+}
+ 
 
 
 function rect(x,y,w,h,state,c,r){     // function to draw tiles
