@@ -8,7 +8,7 @@ var img = document.getElementById("image");
 var img2 = document.getElementById("image2");
 const che = document.querySelector('#checkdiag')
 const wgt = document.getElementById('wgt')
-//var weight = val.value
+var output ;
 var weight=wgt.value
 function set_weight(value){
     weight = value
@@ -237,6 +237,7 @@ function reset()
     end = tiles[ec][er]
     start.state= 's';
     end.state= 'f';
+    output.innerHTML="";
     
 }
 function addNeighbors(cur,c,r){
@@ -303,7 +304,7 @@ function clear_path(){
     end = tiles[ec][er]
     start.state= 's';
     end.state= 'f';
-      
+    output.innerHTML=""; 
 
     
 }
