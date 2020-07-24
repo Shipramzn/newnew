@@ -57,11 +57,10 @@ function solve_using_bestfirst(heu){
                 }
                    
             }
-            var time_e = new Date().getTime();
-
+           
             
         }                    
-            
+            var time_e = new Date().getTime();
             if(flag === 0){
                 console.log('No path exists')
             }else{
