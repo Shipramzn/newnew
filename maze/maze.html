@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" /> 
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <title>Solve a maze</title>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <title>Path Finding</title>
+
 </head>
+    
     <body>
-
      
         <div class="title-container">
+            
             <div class="help">
                 <button class="helpbtn" type="button" onclick="alert(' 1. Drag the Start icon to set the start point. \n 2. Drag the Goal icon to set the end point. \n 3. Press RESET button to clear the path and the obstacles. \n 4. Press Clear Path button to clear the path only. \n 5. Press the algorithm button to find the corresponding shortest path. \n 6. Check Allow Diagonal to allow diagonal crossing for path finding. \n 7. Set the value of weight.')">Instructions</button>
             </div>
            
-            <h1 class="title">PATHFINDER</h1>
+            <h1 class="title">PATH FINDER</h1>
             
             <div class="key">
                 <p>Start:</p><img class="kstart" src="./images/mars_rover3.png" alt=""><p>Goal:</p><img class="kgoal" src="./images/stop.png" alt=""><p>Block:</p><div class="kblock"></div><p>Path:</p><div class="kpath"></div>
             </div>
+            
         </div>
             
             
@@ -37,64 +43,51 @@
             
             <canvas id='myCanvas' class='p-box' ></canvas>
             
-        <div class="buttons">
-        <!--    <button  class ="gen"  onclick="random_destination_points()">Generator</button>    -->       
+        <div class="buttons"> 
+
             <button  class ="reset-btn" onclick="reset()">Reset</button>
             <button  class ="reset-btn" onclick="clear_path()">Clear Path</button>
             <button  class ="start-btn"  onclick="solve_using_bfs()">Breadth-first</button>
             <button  class ="start-btn"  onclick="solve_using_dijkstra()">Dijkstra</button>
 
-          <!---  <div class="id_100">-->
             <select name="bestfirst"  class ="sel" onchange="solve_using_bestfirst(this.value)">
-                <!---  <option value="0" class = "start-btn" >Best-First</option>-->
-                  <option value="none" selected disabled hidden>Best First</option>
-                  <option value="manhattan"  class="option">Best First - manhattan</option>
-                  <option value="euclidean"  class="option">Best First - Euclidean</option>
-                  <option value="octile"  class="option">Best First - octile</option>
-                  <option value="chebyshev"  class="option">Best First - chebyshev</option>    
-                </select>
-           <!--- </div>-->
+                <option value="none" selected disabled hidden>Best First</option>
+                <option value="manhattan"  class="option">Best First - manhattan</option>
+                <option value="euclidean"  class="option">Best First - Euclidean</option>
+                <option value="octile"  class="option">Best First - octile</option>
+                <option value="chebyshev"  class="option">Best First - chebyshev</option>    
+            </select>
 
-          <!--  <div class="id_100">-->
               
-                <select name="Astar" class ="sel" onchange="solve_using_astar(this.value)">
-               <!-- <option  class="start-btn">A*</option>-->
+            <select name="Astar" class ="sel" onchange="solve_using_astar(this.value)">
                 <option value="none" selected disabled hidden>A*</option>
                 <option value="manhattan" class="option">A* - manhattan</option>
                 <option value="euclidean" class="option" >A* - Euclidean</option>
                 <option value="octile"  class="option">A* - octile</option>
                 <option value="chebyshev"  class="option">A* - chebyshev</option>    
-                </select>
-            <!--</div>-->
+            </select>
 
-          <!----<div class="id_100">-->
-                <select name="idastar" class ="sel" onchange="solve_using_idastar(this.value)">
-               <!--- <option value="0" class="start-btn">IDA*</option>-->
+            <select name="idastar" class ="sel" onchange="solve_using_idastar(this.value)">
                 <option value="none" selected disabled hidden>IDA*</option>
                 <option value="manhattan" class="option">IDA* - manhattan</option>
                 <option value="euclidean" class="option">IDA* - Euclidean</option>
                 <option value="octile" class="option">IDA* - octile</option>
                 <option value="chebyshev" class="option">IDA* - chebyshev</option>    
-                </select>
-           <!---- </div>-->
-           <!---
-           <label for="fname" class ="time" >Seconds limit</label>
-           <input type="text" id="tm" value="10" onchange="set_time(this.value)"/> -->
+            </select>
             
-           
-           
             <label for="fname" class ="weight" id="wait">Weight </label>
             <input type="text" id="wgt" value="1" onchange="set_weight(this.value)"/> 
            
             
             <label for="check" class = "check">
             <input type="checkbox"  id="checkdiag" checked/>Allow Diagonal</label>
+
         </div>
+
         <p  style ="text-align: center" id="outcome"></p>
-        </div>
+
         <p id ="para"> <span>Project hosted on <a href="https://github.com/Plaksha05/shortest_path.git">Github</a></span> </p>
-        
-        <!-- <p id="outcome"></p> -->
+    
         <script src='breadth_first.js'></script>
         <script src='Astar.js'></script>
         <script src='dijkstra.js'></script>
@@ -105,74 +98,6 @@
         <script src ='path.js'></script>
         <script src ='animation.js'></script>
 
-
-        
-<!--
-        <footer id="footer">
-            Project Hosted on <a href="">Github</a>
-        </footer>-->
-
-    
     </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-           <!-- <button  class ="start-btn"  onclick="solve_using_astar()">Solve Using A*</button> -->
-
-            <!-- <div class="dropdown">
-                <button class="start-btn" id="astar">Solve Using A*</button>
-                <div class="dropdown-content">
-                    <a href="#">Manhattan</a>
-                    <a href="#">Euclidean</option>
-                    <a href="#">Octile</a>
-                </div>
-            </div> -->
-            <!-- <div class="dropdown">
-                <button class="start-btn" >Solve Using Best-First</button>
-                <ul class="dropdown-content">
-                    <a href="#" id="bf-man">Manhattan</a>
-                    <a href="#">Euclidean</a>
-                    <a href="#">Octile</a>
-                    </ul>
-            </div> -->
-            <!-- <div class="dropdown">
-                <button class="start-btn" id="bf" type="button" data-toggle="dropdown">Solve Using A*
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Manhattan</a></li>
-                  <li><a href="#">Euclidean</a></li>
-                  <li><a href="#">Octile</a></li>
-                  <li><a href="#">Chebyshev</a></li>
-                </ul>
-            </div> -->
-<!-- 
-            <div class="dropdown">
-                <button class="start-btn" id="bf" type="button" data-toggle="dropdown">Solve Using Best-First
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Manhattan</a></li>
-                  <li><a href="#">Euclidean</a></li>
-                  <li><a href="#">Octile</a></li>
-                  <li><a href="#">Chebyshev</a></li>
-                </ul>
-            </div>
-
-            <div class="dropdown">
-                <button class="start-btn" id="bf" type="button" data-toggle="dropdown">Solve Using IDA*
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Manhattan</a></li>
-                  <li><a href="#">Euclidean</a></li>
-                  <li><a href="#">Octile</a></li>
-                  <li><a href="#">Chebyshev</a></li>
-                </ul>
-            </div> -->
