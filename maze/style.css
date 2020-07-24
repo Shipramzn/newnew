@@ -7,7 +7,7 @@
     display:block;
 }
 
-.title {
+.title{
     color: rgb(15, 37, 37);
     font-size: 40px;
     font-weight: 700; 
@@ -17,7 +17,7 @@
     width: 20%;
 }
 
-.title-container {
+.title-container{
     background-color: #369682;
     display: flex;
     align-content: center;
@@ -27,7 +27,7 @@
     height: 4em;
 }
 
-.key {
+.key{
     margin-right: 2%;
     align-self: center;
     flex-direction: row;
@@ -37,20 +37,20 @@
     align-items: center;
 }
 
-.key p {
+.key p{
     color :white;
     margin: 2%;
 }
 
-.kstart {
+.kstart{
     width: 25px;
 }
 
-.kgoal {
+.kgoal{
     width: 25px;
 }
 
-.kstart {
+.kstart{
     background: white;
     width: 25px;
     height: 25px;
@@ -59,7 +59,7 @@
     border: 1px solid white;
 }
 
-.kgoal {
+.kgoal{
     background: green;
     width: 25px;
     height: 25px;
@@ -68,7 +68,7 @@
     border: 1px solid white;
 }
 
-.kblock {
+.kblock{
     background: white;
     width: 25px;
     height: 25px;
@@ -76,7 +76,7 @@
     border: 1px solid white;
 }
 
-.kpath {
+.kpath{
     background: white;
     width: 25px;
     height: 25px;
@@ -98,12 +98,12 @@
     margin: 0;
 }
 
-.help {
+.help{
     width: 20%;
 }
 
 
-.helpbtn {
+.helpbtn{
     color: #ffffff;
     background-color: #FF9000;
     border: none;
@@ -118,12 +118,12 @@
     margin-left: 25px;
 }
 
-.start-btn:hover , .gen:hover , .reset-btn:hover{
+.start-btn:hover ,.reset-btn:hover{
     background-color: #369682;
     cursor: pointer;
 }
 
-.start-btn, .gen , .reset-btn {
+.start-btn,.reset-btn{
     color: rgb(15, 37, 37);
     background-color: #1abc9c;
     border: none;
@@ -133,13 +133,12 @@
     border-radius: 4px;
     padding: 10px 20px;
     width: 10%;
-   
     transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
     white-space: nowrap;
 }
 
 
-.buttons {
+.buttons{
     background-color: #369682;
     cursor: pointer;
     align-content: center;
@@ -148,7 +147,7 @@
 
 }
 
-.helpbtn:hover {
+.helpbtn:hover{
     background-color: rgb(37, 99, 96);
 } 
 
@@ -173,12 +172,9 @@ color: white;
     border: none;
     border-radius: 5%;
     background-color: #1abc9c;
-    //height: 45px;
     width: 10%;
     color: rgb(15, 37, 37);
     font-weight: bold;
-   //padding: 10px 20px;
-
 }
 
 .sel:hover{
@@ -193,6 +189,7 @@ color: white;
     padding-left: 10px;
     top:7px;
 }
+
 #wgt{
     position: relative;
     width: 1.2em;
@@ -201,10 +198,9 @@ color: white;
     font-size: 15px;
     top:13px;
     left: 6px;
-
 }
 
-body {
+body{
     overflow: hidden; /* Hide scrollbars */
 }
 
@@ -215,5 +211,3 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     top: 87%;
 }
-
-
