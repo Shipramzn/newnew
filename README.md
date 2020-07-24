@@ -25,16 +25,16 @@ The project code can be found on (https://github.com/Plaksha05/shortest_path.git
 In this project, a 2D array stores the properties of each tile like state , g(cost) value, h(heuristic), parent, visited state etc. which are being accessed by the algorithms for implementation.
 
 CODE:
-Grid.js file contains functions which are responsible for generating grid . It contains functions like reset() ,clear_path(), isDiagonal(), addNeighbors() etc.
-Path.js file contains functions like :- path_f() , length() and remove() 
-Heuristic.js contains functions for calculating heuristic distance
-animation.js file contains functions for path visualisation
+1.Grid.js file contains functions which are responsible for generating grid . It contains functions like reset() ,clear_path(), isDiagonal(), addNeighbors() etc.
+2.Path.js file contains functions like :- path_f() , length() and remove() 
+3.Heuristic.js contains functions for calculating heuristic distance
+4.animation.js file contains functions for path visualisation
 
 UI:
-The instructions button on the top-left is for info about how to start testing the project.
-The symbols on the top-right are the color and picture encoding.
-The bar of buttons on the bottom is for various operations listed under Instructions button.
-Immediate to instructions button the length of the path and time used for algo will be displayed.
+1.The instructions button on the top-left is for info about how to start testing the project.
+2.The symbols on the top-right are the color and picture encoding.
+3.The bar of buttons on the bottom is for various operations listed under Instructions button.
+4.Immediate to instructions button the length of the path and time used for algo will be displayed.
 
 The project is working on all the browsers (Chrome, Microsoft edge, Mozilla Firefox(version 64.0 64bit), Safari(macOS Sierra)). 
 Each algorithm have its own variables with local scope. Their scope will be vanished with the termination of the algo.
