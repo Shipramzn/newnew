@@ -1,6 +1,6 @@
 
 # Shortest Pathfinder
-The aim of this project is to find the shortest path between two points in 2D context. The algorithms which are being implemented in this project are the following:
+This project finds the shortest path between two points in 2D context. The algorithms which are being implemented in this project are the following:
 - A*
 - Dijkstra
 - Best-First Search
@@ -33,6 +33,5 @@ The project works on all the browsers (Chrome, Microsoft edge, Mozilla Firefox(v
 
 - For some cases IDA* does not show any path due to the time limit exceed.
 - If page doesn't load properly refresh it.  
-- The project is working on 64.0 64bit version of Firefox. On other versions UI will be displayed well . Moreover , the algos will work well but problem can be faced in drawing obstacles(smoothness in drawing).
-- Due to unavailibility of Mac, project was tested on (https://app.lambdatest.com/console/realtime) with  macOS Sierra(OS).   
+- The project is working on 64.0 64bit version of Firefox. On other versions UI will be displayed well . Moreover , the algos will work well but problem can be faced in drawing obstacles(smoothness in drawing). 
 
