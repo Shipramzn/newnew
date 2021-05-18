@@ -13,14 +13,21 @@ Javascript ,HTML5 and CSS
 ## Project Link
 https://shortest-path-git-master.ismians.vercel.app/maze/maze.html
 
-## Code
-
-- Grid.js file contains functions which are responsible for generating grid . It contains functions like reset() ,clear_path(), isDiagonal(), addNeighbors() etc.
-- Path.js file contains functions like :- path_f() , length() and remove() 
-- Heuristic.js contains functions for calculating heuristic distance
-- Animation.js file contains functions for path visualisation
-
 The project works on all the browsers (Chrome, Microsoft edge, Mozilla Firefox(version 64.0 64bit), Safari(macOS Sierra)). 
+
+## Images
+
+- A* Algorithm
+
+![plot](./public/Astar.png)
+
+- Dijkstra Algorithm
+
+![plot](./public/dijkstra.png)
+
+- Best First Algorithm
+
+![plot](./public/bestfirst.png)
 
 ## Limitations
 
