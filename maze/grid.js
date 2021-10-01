@@ -1,3 +1,4 @@
+//grid.js
 const canvas= document.getElementById("myCanvas");
 const ctx= canvas.getContext("2d");
 canvas.height = window.innerHeight-108
